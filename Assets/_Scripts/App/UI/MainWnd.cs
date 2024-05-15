@@ -35,6 +35,10 @@ public class MainWnd : UIBase
         {
             Game.Instance.uiManager.ShowUI<ResultWnd>();
         });
+        exit_Btn.onClick.AddListener(() =>
+        {
+            Application.Quit();
+        });
     }
 
 
