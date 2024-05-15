@@ -3,7 +3,9 @@
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [
-        "WebGL"
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64"
     ],
     "allowUnsafeCode": false,
     "overrideReferences": false,
