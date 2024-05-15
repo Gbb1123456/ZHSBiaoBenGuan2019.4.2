@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BiaoBenGuan.unity
     guid: 3905bcc75e203a345a21c57076514f14
+  - enabled: 1
+    path: Assets/Scenes/BiaoBenGuan2.unity
+    guid: 4e3a188111eed734aa68a1a52023f713
   m_configObjects: {}

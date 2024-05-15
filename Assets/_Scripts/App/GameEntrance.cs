@@ -11,7 +11,7 @@ public class GameEntrance : MonoBehaviour
     {
         MVC.RegisterModel(new GameModel());
         Game.Instance.uiManager.ShowUI<StartWnd>();
-        Game.Instance.sceneManager.LoadLevel("BiaoBenGuan");
+        Game.Instance.sceneManager.LoadLevel("BiaoBenGuan2");
         gameModel = MVC.GetModel<GameModel>();
         gameModel.Init();
         //Debug.Log(gameModel.excel.GetLanguageDataid(1).Chinese);
