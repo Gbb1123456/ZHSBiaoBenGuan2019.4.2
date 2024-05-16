@@ -56,7 +56,10 @@ public class ResultWnd : UIBase
         zhi = StartGame.Objstring.Count * 12.5f;
         Debug.Log(zhi);
         Communication.Log = true;
-        Communication.UploadReport(zhi, "实验总结内容", url => Communication.OpenWebReport(url),
+        //Communication.UploadReport(zhi, "实验总结内容", url => Communication.OpenWebReport(url),
+        //    new WisdomTree.Common.Function.Model("浏览结果", new Content("浏览结果：", StringTxt())));
+
+       WisdomTree.Common.Function.Communication.UploadReport(zhi, "实验总结内容", url => Communication.OpenWebReport(url),
             new WisdomTree.Common.Function.Model("浏览结果", new Content("浏览结果：", StringTxt())));
     }
     private string StringTxt()
