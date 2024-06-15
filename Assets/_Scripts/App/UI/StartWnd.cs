@@ -21,10 +21,11 @@ public class StartWnd : UIBase
         start_Btn.onClick.AddListener(() =>
         {
             Game.Instance.uiManager.CloseUI<StartWnd>();
-            
-            Game.Instance.uiManager.ShowUI<HelpWnd>();
-            Game.Instance.uiManager.ShowUI<MainWnd>();
-            Game.Instance.uiManager.ShowUI<MapWnd>();
+
+            Game.Instance.uiManager.ShowUI<SeleceWnd>();
+            //Game.Instance.uiManager.ShowUI<HelpWnd>();
+            //Game.Instance.uiManager.ShowUI<MainWnd>();
+            //Game.Instance.uiManager.ShowUI<MapWnd>();
         });
     }
 

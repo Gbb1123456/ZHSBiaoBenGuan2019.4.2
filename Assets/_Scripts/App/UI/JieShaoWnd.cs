@@ -14,10 +14,12 @@ public class JieShaoWnd : UIBase
     Image tuPian_Img;
     Text txt;
     Button exit_Btn;
+    GameModel gameModel;
 
     public override void Init(IUIManager uictrl)
     {
         base.Init(uictrl);
+        gameModel = MVC.GetModel<GameModel>();
         topTxt = transform.FindFirst<Text>("topTxt");
         tuPian_Img = transform.FindFirst<Image>("tuPian_Img");
         txt = transform.FindFirst<Text>("txt");
@@ -43,5 +45,21 @@ public class JieShaoWnd : UIBase
     public override void Show()
     {
         base.Show();
+    }
+
+    public override void Hide()
+    {
+        base.Hide();
+
+        
+    }
+
+    private void OnDisable()
+    {
+        if (gameModel.seleceModel.Equals(SeleceModel.daolan))
+        {
+            gameModel.jieShaoID = true;
+            gameModel.daoLanJieShaoCallBack?.Invoke();
+        }
     }
 }

@@ -7,9 +7,11 @@ using ZXKFramework;
 public class GuanChaWanBi : MonoBehaviour
 {
     Button btn;
+    GameModel gameModel;
     // Start is called before the first frame update
     void Start()
     {
+        gameModel = MVC.GetModel<GameModel>();
         btn = GetComponent<Button>();
         btn.onClick.AddListener(() =>
         {
@@ -20,13 +22,21 @@ public class GuanChaWanBi : MonoBehaviour
             {
                 GameManager.Instance.allLookModel[i].SetActive(false);
             }
-            GameManager.Instance.transform.FindFirst("PlayerControllerFPS").GetComponent<FirstPersonController>().enabled = true;
+            if (gameModel.seleceModel.Equals(SeleceModel.zhengchang))
+            {
+                GameManager.Instance.transform.FindFirst("PlayerControllerFPS").GetComponent<FirstPersonController>().enabled = true;
+            }
+            if (gameModel.seleceModel.Equals(SeleceModel.daolan))
+            {
+                gameModel.modelID = true;
+                gameModel.daoLanModelCallBack?.Invoke();
+            }
         });
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
