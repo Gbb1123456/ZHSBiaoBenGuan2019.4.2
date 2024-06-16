@@ -120,7 +120,7 @@ public class DaoLanManager : MonoBehaviour
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
-                    Play6();
+                    Play5();
                 }
             };
 
@@ -132,7 +132,7 @@ public class DaoLanManager : MonoBehaviour
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
-                    Play6();
+                    Play5();
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
@@ -364,7 +364,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("稀树草原动物").FindFirst<Animator>("落叶松").Play("变色");
+            GameManager.Instance.transform.FindFirst("牡丹江流域植物资源").FindFirst<Animator>("落叶松").Play("变色");
         });
     }
 
@@ -403,7 +403,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("昆虫世界").FindFirst<Animator>("三尾凤蝶").Play("三尾凤蝶");
+            GameManager.Instance.transform.FindFirst("昆虫世界").FindFirst<Animator>("三尾凤蝶").Play("变色");
         });
     }
 
@@ -474,7 +474,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (!gameModel.jieShaoID && gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("昆虫世界").FindFirst<Animator>("木耳").Play("变色");
+                    GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -482,7 +482,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("昆虫世界").FindFirst<Animator>("木耳").Play("三尾凤蝶");
+            GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
         });
     }
 
