@@ -24,7 +24,7 @@ public class StartWnd : UIBase
 
             Game.Instance.uiManager.ShowUI<SeleceWnd>();
             //Game.Instance.uiManager.ShowUI<HelpWnd>();
-            //Game.Instance.uiManager.ShowUI<MainWnd>();
+            Game.Instance.uiManager.ShowUI<MainWnd>();
             //Game.Instance.uiManager.ShowUI<MapWnd>();
         });
     }
