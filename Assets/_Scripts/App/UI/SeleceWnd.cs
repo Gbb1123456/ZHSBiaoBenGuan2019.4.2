@@ -34,6 +34,7 @@ public class SeleceWnd : UIBase
         {
             gameModel.seleceModel = SeleceModel.daolan;
             Game.Instance.uiManager.CloseUI<SeleceWnd>();
+            Game.Instance.uiManager.ShowUI<MapWnd>();
             GameManager.Instance.transform.FindFirst<DaoLanManager>("DaoLanManager").enabled = true;
         });
 
