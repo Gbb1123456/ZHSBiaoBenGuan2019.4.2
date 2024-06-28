@@ -22,9 +22,13 @@ public class SeleceWnd : UIBase
 
     GameModel gameModel;
 
+    CameraSIze ca;
+
     public override void Init(IUIManager uictrl)
     {
         base.Init(uictrl);
+
+        ca = GameManager.Instance.transform.FindFirst<CameraSIze>("Camera");
 
         gameModel = MVC.GetModel<GameModel>();
         daolan_Btn = transform.FindFirst<Button>("daolan_Btn");
@@ -32,6 +36,7 @@ public class SeleceWnd : UIBase
 
         daolan_Btn.onClick.AddListener(() =>
         {
+            ca.enabled = false;
             gameModel.seleceModel = SeleceModel.daolan;
             Game.Instance.uiManager.CloseUI<SeleceWnd>();
             Game.Instance.uiManager.ShowUI<MapWnd>();
@@ -40,6 +45,7 @@ public class SeleceWnd : UIBase
 
         zhengchang_Btn.onClick.AddListener(() =>
         {
+            ca.enabled = true;
             gameModel.seleceModel = SeleceModel.zhengchang;
             GameManager.Instance.transform.FindFirst<DaoLanManager>("DaoLanManager").enabled = false;
             Game.Instance.uiManager.CloseUI<SeleceWnd>();

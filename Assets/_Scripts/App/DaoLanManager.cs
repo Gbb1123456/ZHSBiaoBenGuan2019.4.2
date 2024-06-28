@@ -19,19 +19,19 @@ public class DaoLanManager : MonoBehaviour
         gameModel.jieShaoID = false;
         gameModel.modelID = false;
 
-        //Play5();
-        timeLine = transform.FindFirst<PlayableDirector>("1");
-        GameManager.Instance.playerMove.enabled = false;
-        GameManager.Instance.playerRot.enabled = false;
-        Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
-        timeLine.Play();//使用动画控制镜头移动
+        Play18();
+        //timeLine = transform.FindFirst<PlayableDirector>("1");
+        //GameManager.Instance.playerMove.enabled = false;
+        //GameManager.Instance.playerRot.enabled = false;
+        //Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
+        //timeLine.Play();//使用动画控制镜头移动
 
-        //控制镜头移动完毕之后的逻辑
-        cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
-          {
-              Game.Instance.uiManager.CloseUI<MaskWnd>();
-              PlayTwo();
-          });
+        ////控制镜头移动完毕之后的逻辑
+        //cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+        //  {
+        //      Game.Instance.uiManager.CloseUI<MaskWnd>();
+        //      PlayTwo();
+        //  });
     }
 
     /// <summary>
@@ -539,6 +539,7 @@ public class DaoLanManager : MonoBehaviour
 
             Game.Instance.IEnumeratorManager.Stop(cor);
             GetComponent<DaoLanManager>().enabled = false;
+            Game.Instance.uiManager.CloseUI<MapWnd>();
         });
     }
 }

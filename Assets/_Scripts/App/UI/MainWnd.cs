@@ -37,7 +37,10 @@ public class MainWnd : UIBase
         });
         exit_Btn.onClick.AddListener(() =>
         {
-            Application.Quit();
+            GameManager.Instance.transform.FindFirst<DaoLanManager>("DaoLanManager").enabled = false;
+            Game.Instance.uiManager.CloseGroup();
+            Game.Instance.uiManager.ShowUI<SeleceWnd>();
+            //Application.Quit();
         });
     }
 
