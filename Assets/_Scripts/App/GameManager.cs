@@ -21,11 +21,20 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     public LookWithMouse playerRot;
 
+    [HideInInspector]
+    public Vector3 startPos;
+    [HideInInspector]
+    public Quaternion startRot;
+
+    [HideInInspector]
+    public bool isCloseModelAndUI;
     // Start is called before the first frame update
     void Start()
     {
         gameModel = MVC.GetModel<GameModel>();
-
+        isCloseModelAndUI = false;
+        startPos = playerMove.transform.position;
+        startRot = playerMove.transform.rotation;
         //GameObject go = transform.FindFirst("ClickGame");
 
         //for (int i = 0; i < go.transform.childCount; i++)

@@ -37,7 +37,7 @@ public class CameraSIze : MonoBehaviour
                 c.fieldOfView += 10 * slideSpeed * Time.deltaTime;
                 if (c.fieldOfView >= maxView)
                 {
-                    c.fieldOfView = minView;
+                    //c.fieldOfView = minView;
                 }
             }
             //mouseCenter >0 = 正数 往前滑动,放大镜头
@@ -47,11 +47,10 @@ public class CameraSIze : MonoBehaviour
             //滑动限制
             if (c.fieldOfView >= minView)
             {
-                c.fieldOfView -= 10 * slideSpeed *
-                 Time.deltaTime;
+                c.fieldOfView -= 10 * slideSpeed * Time.deltaTime;
                 if (c.fieldOfView <= minView)
                 {
-                    c.fieldOfView = maxView;
+                    //c.fieldOfView = maxView;
                 }
             }
         }

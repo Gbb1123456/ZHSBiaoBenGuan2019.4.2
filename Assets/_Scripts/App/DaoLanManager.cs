@@ -19,19 +19,19 @@ public class DaoLanManager : MonoBehaviour
         gameModel.jieShaoID = false;
         gameModel.modelID = false;
 
-        Play18();
-        //timeLine = transform.FindFirst<PlayableDirector>("1");
-        //GameManager.Instance.playerMove.enabled = false;
-        //GameManager.Instance.playerRot.enabled = false;
-        //Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
-        //timeLine.Play();//使用动画控制镜头移动
+        //Play17_1();
+        timeLine = transform.FindFirst<PlayableDirector>("1");
+        GameManager.Instance.playerMove.enabled = false;
+        GameManager.Instance.playerRot.enabled = false;
+        Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
+        timeLine.Play();//使用动画控制镜头移动
 
-        ////控制镜头移动完毕之后的逻辑
-        //cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
-        //  {
-        //      Game.Instance.uiManager.CloseUI<MaskWnd>();
-        //      PlayTwo();
-        //  });
+        //控制镜头移动完毕之后的逻辑
+        cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+          {
+              Game.Instance.uiManager.CloseUI<MaskWnd>();
+              PlayTwo();
+          });
     }
 
     /// <summary>
@@ -512,7 +512,30 @@ public class DaoLanManager : MonoBehaviour
         cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
         {
             Game.Instance.uiManager.CloseUI<MaskWnd>();
-            Play18();
+            Play17_1();
+        });
+    }
+
+    public void Play17_1()
+    {
+        gameModel.jieShaoID = false;
+        gameModel.modelID = false;
+        gameModel.daoLanModelCallBack = null;
+        gameModel.daoLanJieShaoCallBack = null;
+        timeLine = transform.FindFirst<PlayableDirector>("17_1");
+        Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
+        timeLine.Play();
+        cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+        {
+            gameModel.daoLanJieShaoCallBack = () =>
+            {
+                if (gameModel.jieShaoID)
+                {
+                    Play18();
+                }
+            };
+            Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
+            GameManager.Instance.transform.FindFirst("珍稀动物").FindFirst<Animator>("金丝猴").Play("变色");
         });
     }
 
@@ -541,5 +564,20 @@ public class DaoLanManager : MonoBehaviour
             GetComponent<DaoLanManager>().enabled = false;
             Game.Instance.uiManager.CloseUI<MapWnd>();
         });
+    }
+
+    public void OnDisable()
+    {
+        gameModel.jieShaoID = false;
+        gameModel.modelID = false;
+        gameModel.daoLanModelCallBack = null;
+        gameModel.daoLanJieShaoCallBack = null;
+        if (cor != null)
+        {
+            timeLine.Stop();
+            timeLine = null;
+            StopCoroutine(cor);
+            cor = null;
+        }
     }
 }
