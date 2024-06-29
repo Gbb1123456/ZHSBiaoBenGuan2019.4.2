@@ -33,7 +33,7 @@ public class ResultWnd : UIBase
         StartInit();
         btn.AddListener(() =>
         {
-            Result();
+            
             Game.Instance.uiManager.CloseUI<ResultWnd>();
         });
     }
@@ -50,27 +50,7 @@ public class ResultWnd : UIBase
             transforms.Find(StartGame.Objstring[i]).Find("Image").SetActive(true);
         }
     }
-    private void Result()
-    {
-        double zhi = 0;
-        zhi = StartGame.Objstring.Count * 12.5f;
-        Debug.Log(zhi);
-        Communication.Log = true;
-        //Communication.UploadReport(zhi, "实验总结内容", url => Communication.OpenWebReport(url),
-        //    new WisdomTree.Common.Function.Model("浏览结果", new Content("浏览结果：", StringTxt())));
-
-       WisdomTree.Common.Function.Communication.UploadReport(zhi, "实验总结内容", url => Communication.OpenWebReport(url),
-            new WisdomTree.Common.Function.Model("浏览结果", new Content("浏览结果：", StringTxt())));
-    }
-    private string StringTxt()
-    {
-        string txt = "";
-        for (int i = 0; i < StartGame.Objstring.Count; i++)
-        {
-            txt += StartGame.Objstring[i] + "已浏览\n";
-        }
-        return txt;
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
