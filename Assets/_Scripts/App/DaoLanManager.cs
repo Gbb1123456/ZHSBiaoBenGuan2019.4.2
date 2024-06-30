@@ -19,7 +19,7 @@ public class DaoLanManager : MonoBehaviour
         gameModel.jieShaoID = false;
         gameModel.modelID = false;
 
-        //Play18();
+        //Play14();
         timeLine = transform.FindFirst<PlayableDirector>("1");
         GameManager.Instance.playerMove.enabled = false;
         GameManager.Instance.playerRot.enabled = false;
@@ -435,34 +435,43 @@ public class DaoLanManager : MonoBehaviour
         //    Game.Instance.uiManager.CloseUI<MaskWnd>();
         //    Play15();
         //});
-
         cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
         {
-            gameModel.daoLanJieShaoCallBack = () =>
-            {
-                if (gameModel.jieShaoID && !gameModel.modelID)
-                {
-                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("木耳").Play("变色");
-                }
-                if (gameModel.jieShaoID && gameModel.modelID)
-                {
-                    Play15();
-                }
-            };
 
             gameModel.daoLanModelCallBack = () =>
             {
-                if (!gameModel.jieShaoID && gameModel.modelID)
-                {
-                    GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
-                }
-                if (gameModel.jieShaoID && gameModel.modelID)
+                if (gameModel.modelID)
                 {
                     Play15();
                 }
             };
+
+            //gameModel.daoLanJieShaoCallBack = () =>
+            //{
+            //    if (gameModel.jieShaoID && !gameModel.modelID)
+            //    {
+            //        GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("木耳").Play("变色");
+            //    }
+            //    if (gameModel.jieShaoID && gameModel.modelID)
+            //    {
+            //        Play15();
+            //    }
+            //};
+
+            //gameModel.daoLanModelCallBack = () =>
+            //{
+            //    if (!gameModel.jieShaoID && gameModel.modelID)
+            //    {
+            //        GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+            //    }
+            //    if (gameModel.jieShaoID && gameModel.modelID)
+            //    {
+            //        Play15();
+            //    }
+            //};
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+            //GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+            GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("木耳").Play("变色");
         });
     }
 
