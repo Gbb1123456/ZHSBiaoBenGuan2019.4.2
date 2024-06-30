@@ -19,7 +19,7 @@ public class DaoLanManager : MonoBehaviour
         gameModel.jieShaoID = false;
         gameModel.modelID = false;
 
-        //Play17_1();
+        //Play18();
         timeLine = transform.FindFirst<PlayableDirector>("1");
         GameManager.Instance.playerMove.enabled = false;
         GameManager.Instance.playerRot.enabled = false;
@@ -128,7 +128,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (!gameModel.jieShaoID && gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("湿地动物").FindFirst<Animator>("鸿雁").Play("变色");
+                    GameManager.Instance.transform.FindFirst("湿地动物").FindFirst<Animator>("丹顶鹤").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -136,7 +136,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("湿地动物").FindFirst<Animator>("鸿雁").Play("变色");
+            GameManager.Instance.transform.FindFirst("湿地动物").FindFirst<Animator>("丹顶鹤").Play("变色");
         });
     }
 
@@ -204,7 +204,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (gameModel.jieShaoID && !gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("金雕").Play("变色");
+                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("棕黑锦蛇").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -216,7 +216,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (!gameModel.jieShaoID && gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("山斑鸠").Play("变色");
+                    GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("棕黑锦蛇").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -224,7 +224,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("山斑鸠").Play("变色");
+            GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("棕黑锦蛇").Play("变色");
         });
     }
 
@@ -243,7 +243,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (gameModel.jieShaoID && !gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("黑熊").Play("变色");
+                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("金雕").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -255,7 +255,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (!gameModel.jieShaoID && gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("大山雀").Play("变色");
+                    GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("金雕").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -263,7 +263,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("大山雀").Play("变色");
+            GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("金雕").Play("变色");
         });
     }
 
@@ -282,7 +282,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (gameModel.jieShaoID && !gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("棕黑锦蛇").Play("变色");
+                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("黑熊").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -294,7 +294,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (!gameModel.jieShaoID && gameModel.modelID)
                 {
-                    GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("棕黑锦蛇").Play("变色");
+                    GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("亚洲黑熊").Play("变色");
                 }
                 if (gameModel.jieShaoID && gameModel.modelID)
                 {
@@ -302,7 +302,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("大山雀").Play("棕黑锦蛇");
+            GameManager.Instance.transform.FindFirst("牡丹江流域野生动物").FindFirst<Animator>("亚洲黑熊").Play("变色");
         });
     }
 
@@ -374,7 +374,7 @@ public class DaoLanManager : MonoBehaviour
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("牡丹江流域植物资源").FindFirst<Animator>("落叶松").Play("变色");
+            GameManager.Instance.transform.FindFirst("牡丹江流域植物资源").FindFirst<Animator>("蒙古栎").Play("变色");
         });
     }
 
@@ -430,10 +430,39 @@ public class DaoLanManager : MonoBehaviour
         timeLine.Play();//使用动画控制镜头移动
 
         //控制镜头移动完毕之后的逻辑
+        //cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+        //{
+        //    Game.Instance.uiManager.CloseUI<MaskWnd>();
+        //    Play15();
+        //});
+
         cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
         {
-            Game.Instance.uiManager.CloseUI<MaskWnd>();
-            Play15();
+            gameModel.daoLanJieShaoCallBack = () =>
+            {
+                if (gameModel.jieShaoID && !gameModel.modelID)
+                {
+                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("木耳").Play("变色");
+                }
+                if (gameModel.jieShaoID && gameModel.modelID)
+                {
+                    Play15();
+                }
+            };
+
+            gameModel.daoLanModelCallBack = () =>
+            {
+                if (!gameModel.jieShaoID && gameModel.modelID)
+                {
+                    GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+                }
+                if (gameModel.jieShaoID && gameModel.modelID)
+                {
+                    Play15();
+                }
+            };
+            Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
+            GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
         });
     }
 
@@ -466,34 +495,42 @@ public class DaoLanManager : MonoBehaviour
         timeLine = transform.FindFirst<PlayableDirector>("16");
         Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
         timeLine.Play();
+
+
         cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
         {
-            gameModel.daoLanJieShaoCallBack = () =>
-            {
-                if (gameModel.jieShaoID && !gameModel.modelID)
-                {
-                    GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("木耳").Play("变色");
-                }
-                if (gameModel.jieShaoID && gameModel.modelID)
-                {
-                    Play17();
-                }
-            };
-
-            gameModel.daoLanModelCallBack = () =>
-            {
-                if (!gameModel.jieShaoID && gameModel.modelID)
-                {
-                    GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
-                }
-                if (gameModel.jieShaoID && gameModel.modelID)
-                {
-                    Play17();
-                }
-            };
-            Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
-            GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+            Game.Instance.uiManager.CloseUI<MaskWnd>();
+            Play17();
         });
+
+        //cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+        //{
+        //    gameModel.daoLanJieShaoCallBack = () =>
+        //    {
+        //        if (gameModel.jieShaoID && !gameModel.modelID)
+        //        {
+        //            GameManager.Instance.transform.FindFirst("模型查看").FindFirst<Animator>("木耳").Play("变色");
+        //        }
+        //        if (gameModel.jieShaoID && gameModel.modelID)
+        //        {
+        //            Play17();
+        //        }
+        //    };
+
+        //    gameModel.daoLanModelCallBack = () =>
+        //    {
+        //        if (!gameModel.jieShaoID && gameModel.modelID)
+        //        {
+        //            GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+        //        }
+        //        if (gameModel.jieShaoID && gameModel.modelID)
+        //        {
+        //            Play17();
+        //        }
+        //    };
+        //    Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI
+        //    GameManager.Instance.transform.FindFirst("农作物").FindFirst<Animator>("木耳").Play("变色");
+        //});
     }
 
     public void Play17()
