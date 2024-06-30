@@ -45,6 +45,8 @@ public class SeleceWnd : UIBase
 
         zhengchang_Btn.onClick.AddListener(() =>
         {
+            GameManager.Instance.playerMove.enabled = true;
+            GameManager.Instance.playerRot.enabled = true;
             ca.enabled = true;
             gameModel.seleceModel = SeleceModel.zhengchang;
             GameManager.Instance.transform.FindFirst<DaoLanManager>("DaoLanManager").enabled = false;

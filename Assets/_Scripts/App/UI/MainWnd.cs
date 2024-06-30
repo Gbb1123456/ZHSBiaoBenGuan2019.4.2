@@ -44,11 +44,12 @@ public class MainWnd : UIBase
             Game.Instance.uiManager.CloseGroup();
             Game.Instance.uiManager.ShowUI<SeleceWnd>();
             Game.Instance.uiManager.ShowUI<MainWnd>();
-            if (gameModel.seleceModel.Equals(SeleceModel.zhengchang))
-            {
-                GameManager.Instance.playerMove.transform.position = GameManager.Instance.startPos;
-                GameManager.Instance.playerRot.transform.rotation = GameManager.Instance.startRot;                
-            }
+            //if (gameModel.seleceModel.Equals(SeleceModel.zhengchang))
+            //{
+            GameManager.Instance.playerMove.transform.position = GameManager.Instance.startPos;
+            GameManager.Instance.playerMove.transform.rotation = GameManager.Instance.startRot;
+            GameManager.Instance.playerRot.transform.localRotation = new Quaternion(0, 0, 0, 0);
+            //}
             if (GameManager.Instance.isCloseModelAndUI)
             {
                 GuanChaWanBi.Instance.CloseModelAndUI();
