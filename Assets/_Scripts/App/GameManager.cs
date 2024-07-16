@@ -28,6 +28,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     [HideInInspector]
     public bool isCloseModelAndUI;
+
+    public CameraSIze cameraSize;
     // Start is called before the first frame update
     void Start()
     {
@@ -115,6 +117,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void ShowGameModel(GameObject go)
     {
         playerMove.enabled = false;
+        cameraSize.enabled = false;
         playerRot.enabled = false;
         for (int i = 0; i < allLookModel.Count; i++)
         {

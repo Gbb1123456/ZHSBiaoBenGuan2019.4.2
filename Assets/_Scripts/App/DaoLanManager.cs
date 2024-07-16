@@ -18,20 +18,20 @@ public class DaoLanManager : MonoBehaviour
 
         gameModel.jieShaoID = false;
         gameModel.modelID = false;
+        GameManager.Instance.cameraSize.enabled = false;
+        Play14();
+        //timeLine = transform.FindFirst<PlayableDirector>("1");
+        //GameManager.Instance.playerMove.enabled = false;
+        //GameManager.Instance.playerRot.enabled = false;
+        //Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
+        //timeLine.Play();//使用动画控制镜头移动
 
-        //Play14();
-        timeLine = transform.FindFirst<PlayableDirector>("1");
-        GameManager.Instance.playerMove.enabled = false;
-        GameManager.Instance.playerRot.enabled = false;
-        Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
-        timeLine.Play();//使用动画控制镜头移动
-
-        //控制镜头移动完毕之后的逻辑
-        cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
-          {
-              Game.Instance.uiManager.CloseUI<MaskWnd>();
-              PlayTwo();
-          });
+        ////控制镜头移动完毕之后的逻辑
+        //cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+        //  {
+        //      Game.Instance.uiManager.CloseUI<MaskWnd>();
+        //      PlayTwo();
+        //  });
     }
 
     /// <summary>
@@ -425,6 +425,7 @@ public class DaoLanManager : MonoBehaviour
         gameModel.daoLanJieShaoCallBack = null;
         timeLine = transform.FindFirst<PlayableDirector>("14");
         GameManager.Instance.playerMove.enabled = false;
+        GameManager.Instance.cameraSize.enabled = false;
         GameManager.Instance.playerRot.enabled = false;
         Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
         timeLine.Play();//使用动画控制镜头移动
@@ -483,6 +484,7 @@ public class DaoLanManager : MonoBehaviour
         gameModel.daoLanJieShaoCallBack = null;
         timeLine = transform.FindFirst<PlayableDirector>("15");
         GameManager.Instance.playerMove.enabled = false;
+        GameManager.Instance.cameraSize.enabled = false;
         GameManager.Instance.playerRot.enabled = false;
         Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
         timeLine.Play();//使用动画控制镜头移动
@@ -550,6 +552,7 @@ public class DaoLanManager : MonoBehaviour
         gameModel.daoLanJieShaoCallBack = null;
         timeLine = transform.FindFirst<PlayableDirector>("17");
         GameManager.Instance.playerMove.enabled = false;
+        GameManager.Instance.cameraSize.enabled = false;
         GameManager.Instance.playerRot.enabled = false;
         Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
         timeLine.Play();//使用动画控制镜头移动
@@ -593,6 +596,7 @@ public class DaoLanManager : MonoBehaviour
         gameModel.daoLanJieShaoCallBack = null;
         timeLine = transform.FindFirst<PlayableDirector>("18");
         GameManager.Instance.playerMove.enabled = false;
+        GameManager.Instance.cameraSize.enabled = false;
         GameManager.Instance.playerRot.enabled = false;
         Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
         timeLine.Play();//使用动画控制镜头移动

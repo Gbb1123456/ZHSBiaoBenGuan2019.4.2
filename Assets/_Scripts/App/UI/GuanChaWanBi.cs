@@ -17,6 +17,7 @@ public class GuanChaWanBi : MonoSingleton<GuanChaWanBi>
         {
             GameManager.Instance.playerRot.enabled = true;
             GameManager.Instance.playerMove.enabled = true;
+            GameManager.Instance.cameraSize.enabled = true;
             GameManager.Instance.transform.FindFirst("Look_Canvas").SetActive(false);
             for (int i = 0; i < GameManager.Instance.allLookModel.Count; i++)
             {
@@ -41,6 +42,7 @@ public class GuanChaWanBi : MonoSingleton<GuanChaWanBi>
     public void CloseModelAndUI()
     {
         GameManager.Instance.playerRot.enabled = true;
+        GameManager.Instance.cameraSize.enabled = true;
         GameManager.Instance.playerMove.enabled = true;
         GameManager.Instance.transform.FindFirst("Look_Canvas").SetActive(false);
         for (int i = 0; i < GameManager.Instance.allLookModel.Count; i++)
