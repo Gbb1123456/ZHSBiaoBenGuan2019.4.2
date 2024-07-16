@@ -32,31 +32,31 @@ public class CubeRotAndScale : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(1) && UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-        {
-            go = null;
-        }
-        if (Input.GetMouseButtonDown(1) && rotate && UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-        {
-            Ray ray = ca.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 10000/*, GetComponent<MouseMoveObj>().layerMask*/))
-            {
-                go = hit.collider.gameObject;
-                Debug.LogError("点击到了：" + go.name);
-            }
-            //Vector3 haxis = Vector3.Cross(fwd, Vector3.up);
-            //transform.Rotate(haxis, -Input.GetAxis("Mouse Y") * 7, Space.World);
-        }
-        if (Input.GetMouseButton(1) && go != null)
+        //if (Input.GetMouseButtonUp(1) /*&& UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()*/)
+        //{
+        //    go = null;
+        //}
+        //if (Input.GetMouseButtonDown(1) && rotate /*&& UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()*/)
+        //{
+        //    Ray ray = ca.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, 10000/*, GetComponent<MouseMoveObj>().layerMask*/))
+        //    {
+        //        go = hit.collider.gameObject;
+        //        Debug.LogError("点击到了：" + go.name);
+        //    }
+        //    //Vector3 haxis = Vector3.Cross(fwd, Vector3.up);
+        //    //transform.Rotate(haxis, -Input.GetAxis("Mouse Y") * 7, Space.World);
+        //}
+        if (Input.GetMouseButton(1) /*&& go != null*/)
         {
             if (isWorldAxis)
             {
-                go.transform.Rotate(Vector3.up, -Input.GetAxis("Mouse X") * 7, Space.World);
+                transform.Rotate(Vector3.up, -Input.GetAxis("Mouse X") * 7, Space.World);
             }
             else
             {
-                go.transform.Rotate(go.transform.up, -Input.GetAxis("Mouse X") * 7, Space.World);
+                transform.Rotate(transform.up, -Input.GetAxis("Mouse X") * 7, Space.World);
             }
             //Vector3 fwd = GuZhangManager.Instance.cameraMoveAndRot.transform.forward;
             //fwd.Normalize();
