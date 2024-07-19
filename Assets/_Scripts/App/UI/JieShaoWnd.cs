@@ -39,7 +39,7 @@ public class JieShaoWnd : UIBase
 
         topTxt.text = obj[0].ToString();
         tuPian_Img.sprite = obj[1] as Sprite;
-        txt.text = obj[2].ToString();
+        txt.text = "<color=#FFFFFF00>首缩</color>" + obj[2].ToString();
     }
 
     public override void Show()
@@ -51,7 +51,7 @@ public class JieShaoWnd : UIBase
     {
         base.Hide();
 
-        
+
     }
 
     private void OnDisable()
