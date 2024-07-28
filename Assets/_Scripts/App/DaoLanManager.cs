@@ -19,19 +19,25 @@ public class DaoLanManager : MonoBehaviour
         gameModel.jieShaoID = false;
         gameModel.modelID = false;
         GameManager.Instance.cameraSize.enabled = false;
-        Play14();
-        //timeLine = transform.FindFirst<PlayableDirector>("1");
-        //GameManager.Instance.playerMove.enabled = false;
-        //GameManager.Instance.playerRot.enabled = false;
-        //Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
-        //timeLine.Play();//使用动画控制镜头移动
+        //Play14();
+        timeLine = transform.FindFirst<PlayableDirector>("1");
+        GameManager.Instance.playerMove.enabled = false;
+        GameManager.Instance.playerRot.enabled = false;
+        Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
 
-        ////控制镜头移动完毕之后的逻辑
-        //cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
-        //  {
-        //      Game.Instance.uiManager.CloseUI<MaskWnd>();
-        //      PlayTwo();
-        //  });
+        AudioClip clip = Resources.Load<AudioClip>("Sounds/配音/1");
+        AudioSource audio = GameManager.Instance.audioGame.transform.FindFirst<AudioSource>("female_27");
+        audio.clip = clip;
+        GameManager.Instance.audioGame.SetActive(true);
+        audio.Play();
+        timeLine.Play();//使用动画控制镜头移动
+
+        //控制镜头移动完毕之后的逻辑
+        cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
+          {
+              Game.Instance.uiManager.CloseUI<MaskWnd>();
+              PlayTwo();
+          });
     }
 
     /// <summary>
@@ -46,6 +52,12 @@ public class DaoLanManager : MonoBehaviour
         timeLine = transform.FindFirst<PlayableDirector>("2");
         Game.Instance.uiManager.ShowUI<MaskWnd>();//显示遮罩UI
         timeLine.Play();
+
+        AudioClip clip = Resources.Load<AudioClip>("Sounds/配音/2");
+        AudioSource audio = GameManager.Instance.audioGame.transform.FindFirst<AudioSource>("female_27");
+        audio.clip = clip;
+        audio.Play();
+
         cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
         {
             gameModel.daoLanJieShaoCallBack = () =>
@@ -156,7 +168,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (gameModel.modelID)
                 {
-                    Play6();
+                    Play17_1();
                 }
             };
 
@@ -561,7 +573,7 @@ public class DaoLanManager : MonoBehaviour
         cor = Game.Instance.IEnumeratorManager.Run((float)timeLine.duration, () =>
         {
             Game.Instance.uiManager.CloseUI<MaskWnd>();
-            Play17_1();
+            Play18();
         });
     }
 
@@ -580,7 +592,7 @@ public class DaoLanManager : MonoBehaviour
             {
                 if (gameModel.jieShaoID)
                 {
-                    Play18();
+                    Play6();
                 }
             };
             Game.Instance.uiManager.CloseUI<MaskWnd>();//显示遮罩UI

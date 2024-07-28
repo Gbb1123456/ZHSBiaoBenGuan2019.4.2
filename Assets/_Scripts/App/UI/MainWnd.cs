@@ -54,6 +54,11 @@ public class MainWnd : UIBase
             {
                 GuanChaWanBi.Instance.CloseModelAndUI();
             }
+            if (GameManager.Instance.cor!=null)
+            {
+                Game.Instance.IEnumeratorManager.Stop(GameManager.Instance.cor);
+            }
+            GameManager.Instance.audioGame.SetActive(false);
             Game.Instance.sound.StopBGM();
             //Application.Quit();
             Result();

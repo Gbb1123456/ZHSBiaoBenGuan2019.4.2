@@ -3203,8 +3203,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1039955492}
   - component: {fileID: 1039955491}
-  - component: {fileID: 1039955490}
-  - component: {fileID: 1039955493}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3212,14 +3210,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1039955490
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039955489}
-  m_Enabled: 1
 --- !u!20 &1039955491
 Camera:
   m_ObjectHideFlags: 0
@@ -3277,18 +3267,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1039955493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039955489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1081359258
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,5 +6545,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Look_Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4231070338323423963, guid: 75089bd4eb0b5344daf6f522d7f673cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75089bd4eb0b5344daf6f522d7f673cb, type: 3}

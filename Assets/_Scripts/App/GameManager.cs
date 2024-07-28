@@ -30,7 +30,9 @@ public class GameManager : MonoSingleton<GameManager>
     public bool isCloseModelAndUI;
 
     public CameraSIze cameraSize;
-    // Start is called before the first frame update
+
+    public GameObject audioGame;
+
     void Start()
     {
         gameModel = MVC.GetModel<GameModel>();
@@ -82,6 +84,9 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
+    [HideInInspector]
+    public Coroutine cor;
+
     /// <summary>
     /// 显示介绍界面
     /// </summary>
@@ -109,6 +114,22 @@ public class GameManager : MonoSingleton<GameManager>
         {
             //有鳞目，游蛇科。又称黑松花，分布于黑龙江、吉林、辽宁、河北、山东、湖南、湖北、浙江、西伯利亚、朝鲜、日本等地，栖息于平原、山区的林边、草丛、耕地。
             Game.Instance.sound.PlayBGM(main.SoundPath, false);
+
+            AudioClip clip = Resources.Load<AudioClip>($"Sounds/{ main.SoundPath}");
+            AudioSource audio = audioGame.transform.FindFirst<AudioSource>("female_27");
+            audio.clip = clip;
+            audioGame.transform.position = transform.FindFirst(main.SoundPath).transform.position;
+            audioGame.transform.rotation = transform.FindFirst(main.SoundPath).transform.rotation;
+            audioGame.SetActive(true);
+            audio.Play();
+            cor = Game.Instance.IEnumeratorManager.Run(clip.length, () =>
+             {
+                 if (cor!=null)
+                 {
+                     Game.Instance.IEnumeratorManager.Stop(cor);
+                 }
+                 audioGame.SetActive(false);
+             });
         }
 
     }

@@ -37,7 +37,7 @@ public class SeleceWnd : UIBase
         daolan_Btn.onClick.AddListener(() =>
         {
             ca.enabled = false;
-            gameModel.seleceModel = SeleceModel.daolan;
+            gameModel.seleceModel = SeleceModel.zhengchang;
             Game.Instance.uiManager.CloseUI<SeleceWnd>();
             Game.Instance.uiManager.ShowUI<MapWnd>();
             GameManager.Instance.transform.FindFirst<DaoLanManager>("DaoLanManager").enabled = true;
